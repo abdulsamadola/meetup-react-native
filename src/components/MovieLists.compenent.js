@@ -1,27 +1,38 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Dimensions,
+  ImageBackground
+} from "react-native";
+import Color from "../themes/colors";
 class MovieLists extends Component {
   state = {};
   render() {
-    const { data } = this.props;
+    const { data, onPress } = this.props;
     return (
-      <View style={styles.container}>
-        <TouchableOpacity>
-          <Text style={{ color: "white" }}>{this.props.data.name}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={{ color: "white" }}>We are cool!</Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity style={styles.container} onPress={onPress}>
+        <ImageBackground
+          style={{ flex: 1, width: undefined, height: undefined }}
+          source={{ uri: data.snippet.thumbnails.high.url }}
+          resizeMode="cover"
+        ></ImageBackground>
+        <Text numberOfLines={2} style={{ color: "white", margin: 3 }}>
+          {data.snippet.title}
+        </Text>
+      </TouchableOpacity>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    height: 200,
-    width: 200,
-    backgroundColor: "red"
+    height: Dimensions.get("window").width / 1.5,
+    width: Dimensions.get("window").width / 2 - 10,
+    backgroundColor: Color.afrolynk,
+    margin: 4
   }
 });
 export default MovieLists;

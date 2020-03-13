@@ -10,9 +10,6 @@ class MovieLists extends Component {
         <TouchableOpacity>
           <Text style={{ color: "white" }}>{this.props.data.name}</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={{ color: "white" }}>We are !</Text>
-        </TouchableOpacity>
       </View>
     );
   }
