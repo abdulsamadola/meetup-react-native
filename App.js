@@ -1,14 +1,8 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Platform } from "react-native";
-import { createStackNavigator } from "react-navigation";
+import { StyleSheet, View } from "react-native";
 import AppNavigator from "./src/navigation/Navigation";
 
 export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-  componentDidMount() {}
   render() {
     return (
       <View style={styles.container}>
@@ -21,7 +15,5 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1
-    //justifyContent: "center",
-    //backgroundColor: "white"
   }
 });

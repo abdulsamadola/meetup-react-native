@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { createStackNavigator } from "react-navigation";
 import Movies from "../screens/Movies/Movies";
-import MovieDetailScreen from "../screens/Movies/MovieDetail";
+import MovieDetailScreen from "../screens/Movies/MovieDetails";
 
 const AppNavigator = createStackNavigator(
   {
